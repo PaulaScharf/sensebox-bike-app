@@ -1,5 +1,5 @@
-import useSenseBox from '@/lib/useSenseBox'
-import useUploadToOpenSenseMap from '@/lib/useUploadToOpenSenseMap'
+import useBLEDevice from '@/lib/useBLE'
+import useRecordTrack from '@/lib/useRecordTrack'
 import {
   Bluetooth,
   BluetoothOff,
@@ -11,12 +11,14 @@ import { forwardRef } from 'react'
 import ConnectWithCamera from '../Device/ConnectWithCamera'
 import { Button } from '../ui/button'
 
-const ControlBar = forwardRef<HTMLDivElement>(({}, ref) => {
-  const { connect, isConnected, disconnect } = useSenseBox()
+const ControlBar = forwardRef<HTMLDivElement>((_, ref) => {
+  const { connect, isConnected, disconnect } = useBLEDevice({
+    namePrefix: 'senseBox',
+  })
 
   // const selectedBox = useAuthStore(state => state.selectedBox)
 
-  const { isRecording, start, stop, isLoading } = useUploadToOpenSenseMap()
+  const { isRecording, start, stop, isLoading } = useRecordTrack()
   // const setShowWizardDrawer = useUIStore(state => state.setShowWizardDrawer)
 
   return (
@@ -25,7 +27,7 @@ const ControlBar = forwardRef<HTMLDivElement>(({}, ref) => {
       ref={ref}
     >
       {!isConnected ? (
-        <div className="flex w-full rounded-md bg-primary/25">
+        <div className="mx-auto flex w-full max-w-xl rounded-md bg-primary/25">
           <Button size={'sm'} className="w-full" onClick={() => connect()}>
             <Bluetooth className="mr-2 h-4" />
             Verbinden
@@ -33,7 +35,11 @@ const ControlBar = forwardRef<HTMLDivElement>(({}, ref) => {
           <ConnectWithCamera />
         </div>
       ) : (
-        <Button size={'sm'} className="w-full" onClick={() => disconnect()}>
+        <Button
+          size={'sm'}
+          className="mx-auto w-full max-w-xl"
+          onClick={() => disconnect()}
+        >
           <BluetoothOff className="mr-2 h-4" />
           Trennen
         </Button>

@@ -1,5 +1,5 @@
 import { senseBoxDataRecord } from '@/lib/store/useSenseBoxValuesStore'
-import { Source, Layer } from 'react-map-gl/maplibre'
+import { Layer, Source } from 'react-map-gl'
 
 export default function LocationHistory({
   values,
@@ -13,7 +13,9 @@ export default function LocationHistory({
         type="geojson"
         data={{
           type: 'LineString',
-          coordinates: values.map(value => [value.gps_lng, value.gps_lat]),
+          coordinates: values
+            .filter(value => value.gps_lng && value.gps_lat)
+            .map(value => [value.gps_lng!, value.gps_lat!]),
         }}
       >
         <Layer
