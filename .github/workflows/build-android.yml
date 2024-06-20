@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - tof_recorder
   pull_request:
     branches:
       - main
+      - tof_recorder
 
 jobs:
   build:
