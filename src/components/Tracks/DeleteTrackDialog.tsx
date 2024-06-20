@@ -1,5 +1,3 @@
-'use client'
-
 import {
   Dialog,
   DialogContent,
@@ -24,7 +22,7 @@ export default function DeleteTrackDialog({ track }: { track: Track }) {
   async function onSubmit() {
     try {
       removeTrack(track)
-    } catch (error) {
+    } catch (_error) {
       toast({
         title: 'Fehler',
         description: 'Fehler beim Löschen des Tracks',

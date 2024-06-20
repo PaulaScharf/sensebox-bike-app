@@ -1,5 +1,3 @@
-'use client'
-
 import { useSettingsStore } from '@/lib/store/useSettingsStore'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Cog, ExternalLinkIcon } from 'lucide-react'
@@ -41,8 +39,6 @@ export default function SettingsDrawer() {
   const reducedMotion = useSettingsStore(state => state.reducedMotion)
   const setReducedMotion = useSettingsStore(state => state.setReducedMotion)
 
-  // const { send } = useSenseBox()
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -54,14 +50,6 @@ export default function SettingsDrawer() {
   })
 
   const handleSubmit = (values: z.infer<typeof formSchema>) => {
-    // send(
-    //   '29BD0A85-51E4-4D3C-914E-126541EB2A5E',
-    //   '60B1D5CE-3539-44D2-BB35-FF2DAABE17FF',
-    //   numbersToDataView([
-    //     values.uploadInterval,
-    //     values.switchUseDeviceGPS ? 1 : 0,
-    //   ]),
-    // )
     useSettingsStore.setState({
       uploadInterval: values.uploadInterval,
       useSenseBoxGPS: !values.switchUseSmartphoneGPS,
@@ -78,7 +66,7 @@ export default function SettingsDrawer() {
       onOpenChange={open => setOpen(open)}
     >
       <DrawerTrigger asChild>
-        <Button variant="bold" size={'icon'} onClick={() => setOpen(true)}>
+        <Button variant="secondary" size={'icon'} onClick={() => setOpen(true)}>
           <Cog className="h-6" />
         </Button>
       </DrawerTrigger>
@@ -172,6 +160,7 @@ export default function SettingsDrawer() {
                 className="gap-0.25 flex items-center text-xs text-muted-foreground"
                 href="https://opensensemap.org"
                 target="_blank"
+                rel="noreferrer"
               >
                 openSenseMap
                 <ExternalLinkIcon className="ml-1 h-3 w-3" />
@@ -180,6 +169,7 @@ export default function SettingsDrawer() {
                 className="gap-0.25 flex items-center text-xs text-muted-foreground"
                 href="https://reedu.de"
                 target="_blank"
+                rel="noreferrer"
               >
                 re:edu
                 <ExternalLinkIcon className="ml-1 h-3 w-3" />
