@@ -3,15 +3,14 @@ import { Sensor } from '.'
 import SensorView from './sensor-view'
 
 const distance_matrix: Sensor[] = [{
-  uuid: DistanceMatrixSensor.BLE_CHARACTERISTICS[0],
+  uuid: 'B944AF10-F495-4560-968F-2F0D18CAB522',
   Component: (
     <SensorView
-      characteristic={DistanceMatrixSensor.BLE_CHARACTERISTICS[0]}
+      characteristic={'B944AF10-F495-4560-968F-2F0D18CAB522'}
       rawValueToValue={({ measurement }) => [
         measurement[0] as number,
         measurement[1] as number,
         measurement[2] as number,
-        measurement[3] as number,
       ]}
       rawHistoryValuesToData={values =>
         values.map(v => ({
@@ -19,16 +18,15 @@ const distance_matrix: Sensor[] = [{
           dist_1: v.measurement[0],
           dist_2: v.measurement[1],
           dist_3: v.measurement[2],
-          dist_4: v.measurement[3],
         }))
       }
       name={'Distance-Matrix-A'}
       unit={'mm'}
-      labels={['1', '2', '3', '4']}
+      labels={['1', '2', '3']}
       chartProps={{
         index: 'x',
-        categories: ['1', '2', '3', '4'],
-        colors: ['indigo', 'cyan', 'amber','green'],
+        categories: ['1', '2', '3'],
+        colors: ['indigo', 'cyan', 'amber'],
       }}
     />
   ),
