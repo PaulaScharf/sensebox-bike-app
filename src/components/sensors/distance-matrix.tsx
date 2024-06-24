@@ -1,4 +1,3 @@
-import DistanceMatrixSensor from '@/lib/sensors/distance-matrix'
 import { Sensor } from '.'
 import SensorView from './sensor-view'
 
