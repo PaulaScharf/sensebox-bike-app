@@ -1,13 +1,13 @@
 import AbstractSensor from './abstract-sensor'
 import BaseSensor from './base-sensor'
 
-export default class DistanceMatrixSensor<T extends [number,number,number,number]>
+export default class DistanceMatrixSensorP<T extends [number,number,number,number]>
   extends BaseSensor<T>
   implements AbstractSensor<T>
 {
   public static BLE_CHARACTERISTICS: string[] =
   [
-    'B944AF10-F495-4560-968F-2F0D18CAB523',
+    'B944AF10-F495-4560-968F-2F0D18CAB522',
     'B944AF10-F495-4560-968F-2F0D18CAB524',
     'B944AF10-F495-4560-968F-2F0D18CAB525',
     'B944AF10-F495-4560-968F-2F0D18CAB526',
@@ -26,7 +26,7 @@ export default class DistanceMatrixSensor<T extends [number,number,number,number
   ];
 
   public static BLE_CHARACTERISTIC: string =
-    'B944AF10-F495-4560-968F-2F0D18CAB522'
+    'B944AF10-F495-4560-968F-2F0D18CAB537'
 
   public static type: string = 'distance_matrix'
   public static attributes: string[] = ['distanceA', 'distanceB', 'distanceC', 'distanceD']
