@@ -3,7 +3,6 @@ import battery from './battery'
 import finedust from './finedust'
 import humidity from './humidity'
 import overtaking from './overtaking'
-import distance_matrix from './distance-matrix'
 import temperature from './temperature'
 import ultrasonic from './ultrasonic-distance-sensor'
 
