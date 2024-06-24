@@ -28,7 +28,7 @@ export default class DistanceMatrixSensorL<T extends [number,number,number,numbe
   public static BLE_CHARACTERISTIC: string =
     'B944AF10-F495-4560-968F-2F0D18CAB533'
 
-  public static type: string = 'distance_matrix'
+  public static type: string = 'distance_matrix_L'
   public static attributes: string[] = ['distanceA', 'distanceB', 'distanceC', 'distanceD']
 
   parseData(data: DataView): T {
