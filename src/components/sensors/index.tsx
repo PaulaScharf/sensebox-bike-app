@@ -1,4 +1,5 @@
 import accelerometer from './accelerometer'
+import anomaly from './anomaly'
 import battery from './battery'
 import finedust from './finedust'
 import humidity from './humidity'
@@ -17,6 +18,7 @@ const sensors = [
   humidity,
   ultrasonic,
   accelerometer,
+  anomaly,
   finedust,
   overtaking,
   battery,

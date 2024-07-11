@@ -80,6 +80,7 @@
       "temperature": "Temperature",
       "humidity": "Relative Humidity",
       "accelerometer": "Acceleration",
+      "anomaly": "Anomaly",
       "surface_classification": "Road Surface",
       "distance": "Overtaking Distance",
       "finedust": "Fine Dust",

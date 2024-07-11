@@ -80,6 +80,7 @@
       "temperature": "Temperatur",
       "humidity": "rel. Luftfeuchtigkeit",
       "accelerometer": "Beschleunigung",
+      "anomaly": "Anomalie",
       "surface_classification": "Straßenoberfläche",
       "distance": "Überholabstand",
       "finedust": "Feinstaub",

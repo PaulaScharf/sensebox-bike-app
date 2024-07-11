@@ -16,6 +16,7 @@ export default async function getAggregatedData(trackId: string) {
       case 'temperature':
       case 'humidity':
       case 'accelerometer':
+      case 'anomaly':
       case 'finedust':
         return 'AVG'
       case 'distance':

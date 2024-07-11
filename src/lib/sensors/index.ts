@@ -1,4 +1,5 @@
 import AccelerometerSensor from './accelerometer'
+import AnomalySensor from './anomaly'
 import BaseSensor from './base-sensor'
 import BatterySensor from './battery'
 import FinedustSensor from './finedust'
@@ -12,6 +13,7 @@ const sensors = [
   TemperatureSensor,
   HumiditySensor,
   AccelerometerSensor,
+  AnomalySensor,
   UltrasonicDistanceSensor,
   OvertakingPredictionSensor,
   FinedustSensor,
