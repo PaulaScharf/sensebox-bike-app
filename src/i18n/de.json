@@ -90,7 +90,9 @@
       "surface_anomaly": "Straßenanomalie",
       "distance": "Überholabstand",
       "finedust": "Feinstaub",
-      "overtaking": "Überholvorgang"
+      "overtaking": "Überholvorgang",
+      "overtaking_car": "Auto",
+      "overtaking_bike": "Fahrrad"
     },
     "surface": {
       "asphalt": "Asphalt",

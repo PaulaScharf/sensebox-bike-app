@@ -90,7 +90,9 @@
       "surface_anomaly": "Irregularidade no pavimento",
       "distance": "Distância de ultrapassagem",
       "finedust": "Material particulado",
-      "overtaking": "Ultrapassagem"
+      "overtaking": "Ultrapassagem",
+      "overtaking_car": "Carro",
+      "overtaking_bike": "Bicicleta"
     },
     "surface": {
       "asphalt": "Asfalto",

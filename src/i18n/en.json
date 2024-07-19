@@ -90,7 +90,9 @@
       "surface_anomaly": "Road Anomaly",
       "distance": "Overtaking Distance",
       "finedust": "Fine Dust",
-      "overtaking": "Overtaking Maneuver"
+      "overtaking": "Overtaking Maneuver",
+      "overtaking_car": "Car",
+      "overtaking_bike": "Bike"
     },
     "surface": {
       "asphalt": "Asphalt",
