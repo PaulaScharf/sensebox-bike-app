@@ -1,7 +1,7 @@
 import AbstractSensor from './abstract-sensor'
 import BaseSensor from './base-sensor'
 
-export default class OvertakingPredictionSensor<T extends [number]>
+export default class OvertakingPredictionSensor<T extends [number, number]>
   extends BaseSensor<T>
   implements AbstractSensor<T>
 {
@@ -11,8 +11,8 @@ export default class OvertakingPredictionSensor<T extends [number]>
   public static type: string = 'overtaking'
 
   parseData(data: DataView): T {
-    const [prediction] = this.parsePackages(data)
+    const [prediction_car, prediction_bike] = this.parsePackages(data)
 
-    return [prediction] as T
+    return [prediction_car, prediction_bike] as T
   }
 }

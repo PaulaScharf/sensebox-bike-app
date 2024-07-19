@@ -7,18 +7,24 @@ const overtaking: Sensor = {
   Component: (
     <SensorView
       characteristic={OvertakingPredictionSensor.BLE_CHARACTERISTIC}
-      rawValueToValue={value => (value.measurement[0] as number) * 100}
+      rawValueToValue={({ measurement }) => [
+        (measurement[0] as number) * 100,
+        (measurement[1] as number) * 100,
+      ]}
       rawHistoryValuesToData={values =>
         values.map(v => ({
           x: v.timestamp,
-          y: (v.measurement[0] as number) * 100,
+          car: (v.measurement[0] as number) * 100,
+          bike: (v.measurement[1] as number) * 100,
         }))
       }
       name={'overtaking'}
       unit={'%'}
+      labels={['Car', 'Bike']}
       chartProps={{
         index: 'x',
-        categories: ['y'],
+        categories: ['car', 'bike'],
+        colors: ['pink', 'blue'],
         maxValue: 100,
         minValue: 0,
       }}
