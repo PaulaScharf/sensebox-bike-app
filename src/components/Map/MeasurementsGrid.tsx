@@ -1,16 +1,17 @@
 import { useRawBLEDataStore } from '@/lib/store/use-raw-data-store'
 import { cn } from '@/lib/utils'
-import { SparkAreaChart, SparkAreaChartProps } from '@tremor/react'
 import { forwardRef, useEffect, useState } from 'react'
 import colors from 'tailwindcss/colors'
+import { SparkAreaChart, SparkAreaChartProps } from '../charts/spark-chart'
 import { sensorRegistry } from '../sensors'
 import AnimatedNumber from '../ui/animated-number'
+import { ScrollArea } from '../ui/scroll-area'
 
 const MeasurementsGrid = forwardRef<HTMLDivElement>((_, ref) => {
   const rawData = useRawBLEDataStore(state => state.rawBleSensorData)
 
   return (
-    <div className="flex h-full w-full flex-col p-1 pb-safe-offset-8" ref={ref}>
+    <ScrollArea className="h-[65vh] w-full p-1 pb-safe-offset-8" ref={ref}>
       <div
         className={cn(
           'grid overflow-y-scroll w-full h-full grid-cols-2 grid-rows-4 gap-1',
@@ -18,7 +19,7 @@ const MeasurementsGrid = forwardRef<HTMLDivElement>((_, ref) => {
       >
         {Object.keys(rawData).map(key => sensorRegistry[key])}
       </div>
-    </div>
+    </ScrollArea>
   )
 })
 
@@ -82,8 +83,9 @@ export function GridItem({
         <div className="pointer-events-none absolute -left-6 -right-6 top-0 h-full">
           <SparkAreaChart
             className="h-full w-full opacity-30"
-            curveType="monotone"
-            colors={['slate']}
+            // curveType="monotone"
+            // colors={['slate']}
+            colors={['gray']}
             minValue={100}
             {...chartProps}
           />

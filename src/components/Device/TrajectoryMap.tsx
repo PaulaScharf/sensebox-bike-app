@@ -26,7 +26,7 @@ export default function TrajectoryMap() {
       mapRef.current?.flyTo({
         center,
         zoom,
-        pitch: 45,
+        pitch: 55,
       })
     }
   }, [trajectory])
@@ -37,11 +37,12 @@ export default function TrajectoryMap() {
       initialViewState={initialViewState}
       onMove={({ viewState }) => setViewport(viewState)}
       attributionControl={false}
+      reuseMaps
     >
       <AttributionControl
         position="top-left"
         style={{
-          marginTop: 'calc(0.5rem + env(safe-area-inset-top))',
+          marginTop: 'calc(0.75rem + env(safe-area-inset-top))',
         }}
       />
       {zones && zones.features.length > 0 && (

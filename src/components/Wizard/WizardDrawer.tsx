@@ -1,3 +1,4 @@
+import openSenseMapLogo from '@/assets/openSenseMap.png'
 import ConnectionSelection from '@/components/Wizard/ConnectionSelection'
 import SelectDevice from '@/components/Wizard/SelectDevice'
 import { signout } from '@/lib/api/openSenseMapClient'
@@ -27,21 +28,6 @@ export default function WizardDrawer() {
       onOpenChange={setOpen}
       onClose={() => setOpen(false)}
     >
-      {/* <DrawerTrigger>
-        <div className="relative">
-          <UserCog2 className="w-6" />
-          {(!isLoggedIn || !selectedBox) && (
-            <div className="absolute -right-1 -top-1 rounded-full bg-amber-400 p-0.5">
-              <AlertOctagon className="h-2 w-2 text-background" />
-            </div>
-          )}
-          {selectedBox && (
-            <div className="absolute -right-1 -top-1 rounded-full bg-green-500 p-0.5">
-              <Check className="h-2 w-2 text-background" />
-            </div>
-          )}
-        </div>
-      </DrawerTrigger> */}
       <DrawerContent>
         <div className="mx-auto w-full max-w-md p-4">
           <Swiper
@@ -53,6 +39,11 @@ export default function WizardDrawer() {
             allowTouchMove={false}
           >
             <SwiperSlide>
+              <img
+                src={openSenseMapLogo}
+                alt="openSenseMap"
+                className="h-12 max-w-fit mx-auto mb-4"
+              />
               <LoginOrRegister />
             </SwiperSlide>
             <SwiperSlide>

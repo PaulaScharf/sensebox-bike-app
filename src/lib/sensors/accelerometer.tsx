@@ -1,6 +1,5 @@
 import AbstractSensor from './abstract-sensor'
 import BaseSensor from './base-sensor'
-
 export default class AccelerometerSensor<T extends [number, number, number]>
   extends BaseSensor<T>
   implements AbstractSensor<T>
@@ -14,7 +13,6 @@ export default class AccelerometerSensor<T extends [number, number, number]>
   parseData(data: DataView): T {
     const [acceleration_x, acceleration_y, acceleration_z] =
       this.parsePackages(data)
-
     return [acceleration_x, acceleration_y, acceleration_z] as T
   }
 }
