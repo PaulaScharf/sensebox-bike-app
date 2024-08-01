@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - paulas-main
   pull_request:
     branches:
       - main
+      - paulas-main
 
 jobs:
   build:
