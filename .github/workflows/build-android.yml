@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - tof_recorder
-      - reversion-3
+      - reversion-4
   pull_request:
     branches:
       - tof_recorder
-      - reversion-3
+      - reversion-4
 
 jobs:
   build:
