@@ -35,7 +35,7 @@ export function getTitlefromSensorKey(
   }
   if (key === 'distance') return 'Overtaking Distance'
   if (key === 'overtaking') return 'Overtaking Manoeuvre'
-  if (key === 'acceleration') {
+  if (key === 'accelerometer') {
     if (attribute === 'x') return 'Acceleration X'
     if (attribute === 'y') return 'Acceleration Y'
     if (attribute === 'z') return 'Acceleration Z'

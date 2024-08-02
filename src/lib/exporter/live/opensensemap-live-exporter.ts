@@ -150,15 +150,15 @@ export function dfToOsemCSV(df: dfd.DataFrame) {
   for (const row of values) {
     // send data to OpenSenseMap
     const timestamp = (row as string[])[columns.indexOf('timestamp')]
-    const latitude = 1.0
-    const longitude = 1.0
+    const latitude = (row as number[])[columns.indexOf('latitude')]
+    const longitude = (row as number[])[columns.indexOf('longitude')]
 
-    // if (!latitude || !longitude) {
-    //   console.log(
-    //     '--- OSEM --- Skipping row because of missing latitude or longitude',
-    //   )
-    //   continue
-    // }
+    if (!latitude || !longitude) {
+      console.log(
+        '--- OSEM --- Skipping row because of missing latitude or longitude',
+      )
+      continue
+    }
 
     console.log('--- OSEM --- Uploading data: ')
     console.log(timestamp, latitude, longitude)
