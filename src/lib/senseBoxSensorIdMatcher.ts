@@ -33,7 +33,7 @@ export function getTitlefromSensorKey(
     if (attribute === 'pm2_5') return 'Finedust PM2.5'
     if (attribute === 'pm1') return 'Finedust PM1'
   }
-  if (key === 'distance') return 'Overtaking Distance'
+  if (key === 'distance') return 'Distance Left'
   if (key === 'overtaking') return 'Overtaking Manoeuvre'
   if (key === 'accelerometer') {
     if (attribute === 'x') return 'Acceleration X'

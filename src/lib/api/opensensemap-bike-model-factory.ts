@@ -161,7 +161,7 @@ const sensors: Record<
     {
       id: 7,
       icon: 'osem-shock',
-      title: 'Overtaking Distance',
+      title: 'Distance Left',
       unit: 'cm',
       sensorType: 'VL53L8CX',
     },

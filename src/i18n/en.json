@@ -81,7 +81,7 @@
       "humidity": "Relative Humidity",
       "accelerometer": "Acceleration",
       "surface_classification": "Road Surface",
-      "distance": "Overtaking Distance",
+      "distance": "Distance Left",
       "finedust": "Fine Dust",
       "overtaking": "Overtaking Maneuver"
     }
