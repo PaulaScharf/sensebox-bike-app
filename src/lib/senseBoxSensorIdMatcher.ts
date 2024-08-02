@@ -16,6 +16,9 @@ function getSensorKeyFromTitle(title: string) {
   if (lowerCaseTitle.includes('pm1')) return ['finedust', 'pm1']
   if (lowerCaseTitle.includes('distan')) return ['overtaking', null]
   if (lowerCaseTitle.includes('geschwin')) return ['speed', null]
+  if (lowerCaseTitle.includes('x')) return ['acceleration_x', null]
+  if (lowerCaseTitle.includes('y')) return ['acceleration_y', null]
+  if (lowerCaseTitle.includes('z')) return ['acceleration_z', null]
 }
 
 export function getTitlefromSensorKey(
@@ -32,12 +35,10 @@ export function getTitlefromSensorKey(
   }
   if (key === 'distance') return 'Overtaking Distance'
   if (key === 'overtaking') return 'Overtaking Manoeuvre'
-  if (key === 'surface_classification') {
-    if (attribute === 'asphalt') return 'Surface Asphalt'
-    if (attribute === 'sett') return 'Surface Sett'
-    if (attribute === 'compacted') return 'Surface Compacted'
-    if (attribute === 'paving') return 'Surface Paving'
-    if (attribute === 'standing') return 'Standing'
+  if (key === 'acceleration') {
+    if (attribute === 'x') return 'Acceleration X'
+    if (attribute === 'y') return 'Acceleration Y'
+    if (attribute === 'z') return 'Acceleration Z'
   }
   if (key === 'speed') return 'Speed'
 }
