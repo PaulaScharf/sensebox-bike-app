@@ -37,14 +37,14 @@ export default function MeasurementCharts({
                 data={measurements
                   .filter(e => e.type === type)
                   .map(e => {
-                    if (!attributes) return { x: e.timestamp, y: e.value }
+                    if (!attributes) return { time: e.timestamp, y: e.value }
                     return {
-                      x: e.timestamp,
+                      time: e.timestamp,
                       [e.attribute!]: e.value,
                     }
                   })}
                 categories={[...(attributes ?? 'y')]}
-                index={'x'}
+                index={'time'}
                 showLegend={!!attributes}
                 showTooltip={false}
                 connectNulls={true}
