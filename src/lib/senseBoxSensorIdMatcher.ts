@@ -36,7 +36,8 @@ export function getTitlefromSensorKey(
     if (attribute === 'z') return 'Acceleration Z'
   }
   if (key === 'distance') return 'Overtaking Distance'
-  if (key === 'overtaking') return 'Overtaking Manoeuvre'
+  if (key === 'overtaking_car') return 'Overtaking Car'
+  if (key === 'overtaking_bike') return 'Overtaking Bike'
   if (key === 'surface_classification') {
     if (attribute === 'asphalt') return 'Surface Asphalt'
     if (attribute === 'sett') return 'Surface Sett'

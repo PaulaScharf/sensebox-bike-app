@@ -1,6 +1,7 @@
 import OvertakingPredictionSensor from '@/lib/sensors/overtaking-prediction'
 import { Sensor } from '.'
 import SensorView from './sensor-view'
+import i18n from '@/i18n'
 
 const overtaking: Sensor = {
   uuid: OvertakingPredictionSensor.BLE_CHARACTERISTIC,
@@ -20,7 +21,7 @@ const overtaking: Sensor = {
       }
       name={'overtaking'}
       unit={'%'}
-      labels={['overtaking_car', 'overtaking_bike']}
+      labels={[i18n.t('phenomena.overtaking_car'), i18n.t('phenomena.overtaking_bike')]}
       chartProps={{
         index: 'x',
         categories: ['overtaking_car', 'overtaking_bike'],
