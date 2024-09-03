@@ -7,6 +7,8 @@ import { useSenseBoxValuesStore } from './store/useSenseBoxValuesStore'
 import { useSettingsStore } from './store/useSettingsStore'
 import useBLEDevice from './useBLE'
 
+import { Geolocation } from '@capacitor/geolocation';
+
 import { subscribeToAvailableSensors } from './ble'
 
 import GeolocationService from './geolocation'
@@ -44,6 +46,7 @@ export default function useSenseBox() {
     if (!isConnected) return
 
     PushNotifications.requestPermissions()
+    Geolocation.requestPermissions();
 
     if (!geolocationPermissionGranted) {
       setShowGeolocationPermissionsDrawer(true)
